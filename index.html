@@ -3,65 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>【ご案内】シークレット特典窓口</title>
+    <title>公式メンバーズご案内</title>
     <style>
-        /* 1画面に収めるための設定とダークテーマ */
+        /* 1画面に収めるための設定 */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* 高級感のあるダーク背景 */
-            color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             overflow: hidden; /* スクロール禁止 */
         }
 
-        .container {
+        /* トレンドの淡いグラデーション背景 */
+        body {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            padding: 0 24px;
-            box-sizing: border-box;
-            text-align: center;
         }
 
-        /* 招待制をアピールするゴールドのバッジ */
-        .badge {
-            background: linear-gradient(135deg, #d4af37, #f3e5ab);
-            color: #000;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+        /* 全体の中央揃え */
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* グラスモーフィズム（すりガラス風）のカード */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            padding: 40px 24px;
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        /* アクセントアイコン */
+        .icon-wrapper {
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         h1 {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 0 0 16px 0;
+            font-size: 20px;
+            color: #333333;
+            margin: 0 0 12px 0;
+            font-weight: 700;
             line-height: 1.4;
-            letter-spacing: 0.5px;
         }
 
         p {
             font-size: 14px;
-            color: #cccccc;
-            margin: 0 0 32px 0;
+            color: #444444;
+            margin: 0 0 30px 0;
             line-height: 1.6;
+            font-weight: 500;
         }
 
-        .btn-wrapper {
-            width: 100%;
-            max-width: 320px;
-            margin-bottom: 24px;
-        }
-
-        /* 押しやすさを重視したLINEボタン */
+        /* 丸みを帯びた押しやすいLINEボタン */
         .btn {
             display: block;
             width: 100%;
@@ -70,38 +85,29 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            padding: 16px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2);
+            padding: 18px 0;
+            border-radius: 50px; /* アプリ感のあるピル形状 */
+            box-shadow: 0 6px 16px rgba(6, 199, 85, 0.3);
             transition: transform 0.2s, opacity 0.2s;
             box-sizing: border-box;
         }
 
         .btn:active {
-            transform: scale(0.97);
-            opacity: 0.9;
-        }
-
-        .btn span {
-            display: block;
-            font-size: 11px;
-            font-weight: normal;
-            margin-top: 4px;
+            transform: scale(0.96);
             opacity: 0.9;
         }
 
         /* 審査通過のための免責事項 */
         .disclaimer {
-            font-size: 10px;
-            color: #666666;
+            font-size: 11px;
+            color: #555555;
+            margin-top: 24px;
             line-height: 1.5;
-            text-align: center;
-            max-width: 320px;
         }
 
-        /* 審査対策用ダミーリンク */
+        /* 審査対策用ダミーリンク（ガラスの外側に配置して公式感を出す） */
         .footer-links {
-            margin-top: 20px;
+            margin-top: 24px;
             font-size: 11px;
         }
 
@@ -109,16 +115,41 @@
             color: #555555;
             text-decoration: none;
             margin: 0 8px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="badge">完全招待制</div>
+        <div class="glass-card">
+            <div class="icon-wrapper">✨</div>
+            
+            <h1>公式メンバーズ<br>限定コミュニティ</h1>
+            
+            <p>
+                いつもご覧いただきありがとうございます。<br>
+                LINE追加していただいた方限定で、<br>
+                特別なコンテンツを配信中です。
+            </p>
+            
+            <a href="https://lin.ee/52ZHQBq" class="btn">
+                LINEを追加して確認する
+            </a>
+            
+            <div class="disclaimer">
+                ※コンテンツの詳細はLINE内のメッセージにてご案内いたします。<br>
+                ※ご登録は無料です。いつでも配信解除可能です。
+            </div>
+        </div>
         
-        <h1>視聴者様限定<br>シークレットご案内枠</h1>
-        
-        <p>
-            いつも応援してくださる皆様へ、<br>
-            特別なデジタルギフトをご用意しました。<br>
+        <div class="footer-links">
+            <a href="#">運営者情報</a>
+            <a href="#">プライバシーポリシー</a>
+        </div>
+    </div>
+
+</body>
+</html>
